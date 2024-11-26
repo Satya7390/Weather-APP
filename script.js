@@ -7,7 +7,6 @@ const searchForm = document.querySelector("[data-searhForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
 
-
 // Initial variables 
 
 let currentTab = userTab;
@@ -51,14 +50,6 @@ searchTab.addEventListener('click' , ()=>{
     switchTab(searchTab);
 });
 
-
-    // // - - - - - - - - - - - -User Weather Handling- - - - - - - - - - - -
-    // const grantAccessBtn = document.querySelector("[data-grantAccess]");
-    // const messageText = document.querySelector("[data-messageText]");
-    // const apiErrorImg = document.querySelector("[data-notFoundImg]");
-    // const apiErrorMessage = document.querySelector("[data-apiErrorText]");
-    // const apiErrorBtn = document.querySelector("[data-apiErrorBtn]");
-    
 function getfromSessionStorage(){
 
     const localCoordinates = sessionStorage.getItem("user-coordinates");
@@ -90,13 +81,9 @@ async function fetchUserWeatherInfo(coordinates) {
         renderWeatherInfo(data);
 
     } catch (error) {
-    // // console.log("User - Api Fetch Error", error.message);
-    // loadingScreen.classList.remove("active");
-    // apiErrorContainer.classList.add("active");
-    // apiErrorImg.style.display = "none";
-    // apiErrorMessage.innerText = `Error: ${error?.message}`;
-    // apiErrorBtn.addEventListener("click", fetchUserWeatherInfo);
-    // }
+        loadingScreen.classList.remove("active");
+        console.log("data not supported");
+    }
     
 }
 
@@ -111,10 +98,6 @@ function renderWeatherInfo(weatherInfo){
     const windspeed = document.querySelector("[data-windspeed]");
     const humudity = document.querySelector("[data-humidity]");
     const cloudiness = document.querySelector("[data-cloudiness]");
-
-
-
-  
 
     cityName.innerText = weatherInfo?.name;
     countryIcon.src = `https://flagcdn.com/144x108/${ weatherInfo?.sys?.country.toLowerCase()}.png` ;
@@ -179,13 +162,8 @@ async function fetchSearchWeatherInfo(city) {
         renderWeatherInfo(data);
 
     } catch (error) {
-    
-        // console.log("Search - Api Fetch Error", error.message);
-    //  loadingScreen.classList.remove("active");
-    //  apiErrorContainer.classList.add("active");
-    //  apiErrorMessage.innerText = `${error?.message}`;
-    //  apiErrorBtn.style.display = "none";
-    // }
+       //
+    }
     
 }
 

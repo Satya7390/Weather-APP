@@ -198,12 +198,12 @@ h1 {
 
 .parameter p:last-of-type {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight:400;
 }
 
 /* Search form */
 
-.form-container {
+.form-container{
     display: none;
     width: 90%;
     max-width: 550px;
@@ -215,28 +215,28 @@ h1 {
 
 }
 
-.form-container.active {
+.form-container.active{
     display: flex;
 }
 
-.form-container input {
+.form-container input{
     all: unset;
-    width: calc(100% - 80px);
+    width: calc(100% - 80px);  
     height: 40px;
     padding: 0 20px;
     background-color: rgba(219, 226, 239, 0.5);
     border-radius: 10px;
 }
 
-.form-container input::placeholder {
+.form-container input::placeholder{
     color: rgba(255, 255, 255, 0.7);
 }
 
-.form-container input:focus {
+.form-container input:focus{
     outline: 3px solid rgba(255, 255, 255, 0.7);
 }
 
-.form-container .btn {
+.form-container .btn{
     padding: unset;
     height: 40px;
     width: 40px;
@@ -248,30 +248,10 @@ h1 {
 }
 
 
-/* .api-error-container {
-    display: none;
-}
-
-.api-error-container.active {
-    display: flex;
-    gap: 1rem 0;
-}
-
-.api-error-container p {
-    text-align: center;
-}
-
-.api-error-container img {
-    width: 100%;
-    max-width: 300px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-} */
-
 
 footer {
     position: absolute;
-    bottom: -60px;
+    top: auto;
     left: 0;
     right: 0;
     width: 100%;
