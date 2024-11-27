@@ -152,17 +152,35 @@ searchForm.addEventListener('submit', (e) => {
 async function fetchSearchWeatherInfo(city) {
     loadingScreen.classList.add("active");
     userInfoContainer.classList.remove("active");
+    const errorImage = document.querySelector(".err");
+    const pageNotFound = document.querySelector("[errFound");
     
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-
         const data = await response.json();
-        loadingScreen.classList.remove("active");
-        userInfoContainer.classList.add("active");  
-        renderWeatherInfo(data);
 
+         // If the city is not found, display the error image and message
+         if (data.cod === "404") {
+            loadingScreen.classList.remove("active");
+            userInfoContainer.classList.remove("active"); 
+
+            
+            errorImage.classList.add("active");
+            pageNotFound.classList.add("active");
+            errorImage.alt = "City not found. Please try again.";
+            return;
+         } 
+
+          // If valid data is returned
+        loadingScreen.classList.remove("active");
+        userInfoContainer.classList.add("active");
+        errorImage.classList.remove("active"); 
+        pageNotFound.classList.remove("active");
+        renderWeatherInfo(data);
+        
     } catch (error) {
-       //
+        loadingScreen.classList.remove("active");
+        console.log("An error occurred:", error);
     }
     
 }

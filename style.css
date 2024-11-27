@@ -54,7 +54,7 @@ h1 {
 
 
 .weather-container {
-    margin-block: 4rem;
+    margin-block: 2rem;
 }
 
 .btn {
@@ -198,12 +198,12 @@ h1 {
 
 .parameter p:last-of-type {
     font-size: 1rem;
-    font-weight:400;
+    font-weight: 400;
 }
 
 /* Search form */
 
-.form-container{
+.form-container {
     display: none;
     width: 90%;
     max-width: 550px;
@@ -215,28 +215,28 @@ h1 {
 
 }
 
-.form-container.active{
+.form-container.active {
     display: flex;
 }
 
-.form-container input{
+.form-container input {
     all: unset;
-    width: calc(100% - 80px);  
+    width: calc(100% - 80px);
     height: 40px;
     padding: 0 20px;
     background-color: rgba(219, 226, 239, 0.5);
     border-radius: 10px;
 }
 
-.form-container input::placeholder{
+.form-container input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.form-container input:focus{
+.form-container input:focus {
     outline: 3px solid rgba(255, 255, 255, 0.7);
 }
 
-.form-container .btn{
+.form-container .btn {
     padding: unset;
     height: 40px;
     width: 40px;
@@ -247,24 +247,59 @@ h1 {
     margin-top: 10px;
 }
 
+/* error handling */
 
+.err {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+
+}
+
+.err.active {
+    display: flex;
+}
+
+#err {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#err.active {
+    display: flex;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    flex: 1;
+    /* Allow the main content to grow and push the footer down */
+}
 
 footer {
-    position: absolute;
-    top: auto;
-    left: 0;
-    right: 0;
-    width: 100%;
+    position: relative;
+    text-align: center;
+    background-color: var(--footerBackgroundColor, #f8f9fa);
+    /* Optional background color */
+    font-size: 0.875rem;
     background: #111;
     padding: 15px 23px;
     color: #fff;
     text-align: center;
-    z-index: 1;
     background-color: var(--colorDark2);
     box-shadow:
         0px 0px 15px rgba(71, 69, 69, 0.2),
         0px 0px 5px rgba(228, 221, 221, 0.1);
 }
+
 
 footer span a {
     color: #0ea5fc;
@@ -273,4 +308,16 @@ footer span a {
 
 footer span a:hover {
     text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .parameter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parameter {
+        width: 100%;
+    }
 }
