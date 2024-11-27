@@ -186,6 +186,14 @@ async function fetchSearchWeatherInfo(city) {
 }
 
 
+const pageRefresh = document.querySelector("[data-userWeather]");
+
+pageRefresh.addEventListener('click' , ()=>{
+    location.reload();
+});
+
+
+
 
 
 
