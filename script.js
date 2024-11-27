@@ -153,7 +153,7 @@ async function fetchSearchWeatherInfo(city) {
     loadingScreen.classList.add("active");
     userInfoContainer.classList.remove("active");
     const errorImage = document.querySelector(".err");
-    const pageNotFound = document.querySelector("[errFound");
+    const pageNotFound = document.querySelector("[errFound]");
     
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
